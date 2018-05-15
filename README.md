@@ -20,7 +20,8 @@ $ npm install styleguide-lite --save
 Options:
   --src, -s       src files path pattern. [string] [default: "./src/scss/**/*.scss"]
   --dest, -d      dest directory path. [string] [default: "./dest/styleguide"]
-  --template, -t  template directory path. [string] [default: __dirname + "/template"]
+  --template, -t  template file path. [string] [default: __dirname + "/template/index.ejs"]
+  --assets, -a    assets directory path. [string] [default: "./dest/assets"]
   --isOutput      Whether to output. [boolean] [default: true]
   --version, -v   show this version. [boolean]
   --help, -h      show this help. [boolean]
