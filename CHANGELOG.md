@@ -1,3 +1,7 @@
+# 1.0.4 (2018-05-16)
+
+-   Bug fix (shorthand option)
+
 # 1.0.3 (2018-05-16)
 
 -   Add asset option
