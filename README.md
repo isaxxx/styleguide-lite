@@ -43,7 +43,21 @@ $ styleguide-lite -s ./src/css/**/*.css -d ./styleguide/ -t ./template/
 ===
 0 Overview
 ===
-Overview text.
+Here markup text.
+*/
+
+/*
+===
+1 Basic
+===
+Here markup text.
+*/
+
+/*
+===
+1.1 Layout
+===
+Here markup text.
 */
 ```
 
