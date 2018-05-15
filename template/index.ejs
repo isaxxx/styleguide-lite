@@ -21,14 +21,14 @@
                 <h1>Styleguide Lite</h1>
                 <nav role="navigation">
                     <ul>
-                        <% getOverviewList().forEach(function (item) { %>
+                        <% getOverviews().forEach(function (overview) { %>
                             <li>
-                                <a href="<%= item.link %>"><%= item.title %></a>
-                                <% if (hasOverviewChildList(item.sectionNumber)) { %>
+                                <a href="<%= overview.link %>"><%= overview.title %></a>
+                                <% if (hasDetails(overview.sectionNumber)) { %>
                                     <ul>
-                                        <% getOverviewChildList(item.sectionNumber).forEach(function (childItem) { %>
+                                        <% getDetails(overview.sectionNumber).forEach(function (detail) { %>
                                             <li>
-                                                <a href="<%= childItem.link %>#<%= childItem.number %>"><%= childItem.title %></a>
+                                                <a href="<%= detail.link %>#<%= detail.number %>"><%= detail.title %></a>
                                             </li>
                                         <% }); %>
                                     </ul>
