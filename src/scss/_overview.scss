@@ -1,0 +1,226 @@
+/*
+====================
+0 Overview
+====================
+# Whisk
+
+## Frontend Framework for it enhance versatility of code that forms Responsive Web Design.
+
+## In addition, it is a new CSS that you are adding the concept of vertical auxiliary line.
+
+[View project on Github](https://github.com/m-basho/whisk)
+
+[Whisk Styleguide](section-1.html)
+
+### Overview
+
+The support by Grunt of web production using Sass and CoffeeScript.
+
+* [Requires](#requires)
+
+* [Getting Started](#getting-started)
+
+* [Specification](#specification)
+
+  * [Grunt Tasks](#grunt-tasks)
+
+  * [Directory Structure](#directory-structure)
+
+  * [Styleguide](#styleguide)
+
+  * [Customizing](#customizing)
+
+* [Changelog](#changelog)
+
+
+
+
+### Requires
+
+* [RubyGems](https://rubygems.org) 2.4.4 or later
+
+* [Bundler](http://bundler.io) 1.7.9 or later
+
+* [Node.js](http://nodejs.org) 0.10.35 or later
+
+* [NPM](https://www.npmjs.com) 2.2.0 or later
+
+* [Grunt-CLI](http://gruntjs.com) 0.1.13 or later
+
+* [Bower](http://bower.io) 1.3.12 or later
+
+
+
+
+### Getting Started
+
+1. Download
+
+[Github](https://github.com/m-basho/whisk)
+
+2. Change into a new directory
+
+```sh
+$ cd whisk-x.x.x
+```
+
+3. Install Node Package Modules
+
+```sh
+$ npm install
+```
+
+4. Setup Frontend Libraries
+
+```sh
+$ grunt bower-concat
+```
+
+5. Starting
+
+```sh
+$ grunt
+```
+
+
+
+
+### Specification
+
+#### Grunt Tasks
+
+##### default
+
+To Watch sass and coffee directories, compile the files.
+
+##### bower-concat
+
+Collected the libraries in Bower, further join them.
+
+##### minify
+
+Compresses files, and generate the GZIP.
+
+##### generate-styleguide
+
+Generate styleguide by [kss-node](https://github.com/kss-node/kss-node).
+
+##### generate-yuidoc
+
+Generate [yuidoc](http://yui.github.io/yuidoc/).
+
+##### generate-sprite
+
+Generate the spritesheet and their CSS files by [grunt-spritesmith](https://github.com/Ensighten/grunt-spritesmith).
+
+##### generate-embed
+
+Generate the data URI scheme of images in embed directory by [grunt-data-uri](https://github.com/ahomu/grunt-data-uri).
+
+##### check-bless
+
+Checking the number of CSS selectors by [Bless](http://blesscss.com).
+
+##### check-csscss
+
+Checking the rules set of CSS that have duplicate declaration by [csscss](http://zmoazeni.github.io/csscss/).
+
+##### lint-css
+
+Checking CSS syntax by [CSS Lint](http://csslint.net).
+
+##### lint-js
+
+Checking Javascript syntax by [JSHint](http://jshint.com).
+
+##### template-wordpress
+
+Generate a default stylesheet of [Wordpress](https://wordpress.org).
+
+##### template-html
+
+Generate a HTML file for using Whisk.
+
+
+
+#### Directory Structure
+
+##### Sass
+
+```sh
+# sass
+├── styleguide.md
+├── _config.scss
+├── style.scss
+├── add.scss
+├── _config
+│   ├── _all.scss
+│   ├── _colors.scss
+│   ├── _debug.scss
+│   ├── _default.scss
+│   ├── _detail.scss
+│   └── _helper.scss
+├── whisk
+│   ├── _all.scss
+│   ├── _outputs.scss
+│   ├── conponents
+│   │   ├── _button.scss
+│   │   ├── _divider.scss
+│   │   ├── _header.scss
+│   │   └── _input.scss
+│   ├── debug
+│   │   ├── _bar.scss
+│   │   └── _box.scss
+│   ├── foundation
+│   │   ├── _bar.scss
+│   │   └── _box.scss
+│   ├── helper
+│   │   ├── _bar.scss
+│   │   └── _box.scss
+│   ├── includes
+│   │   ├── _bar.scss
+│   │   └── _box.scss
+│   └── layout
+│       ├── _all.scss
+│       ├── _container.scss
+│       ├── _offset.scss
+│       ├── _ordering.scss
+│       └── _partical.scss
+└── _customize
+    ├── _all.scss
+    ├── components
+    ├── project
+    └── utility
+```
+
+
+
+#### Styleguide
+
+[Whisk Styleguide](section-1.html)
+
+##### Module Prefix
+
+| Prefix | Module name |
+| ------ | ---------- |
+| u-\* | utility |
+| l-\* | layout |
+| c-\* | component |
+| is-\* | state |
+| js-\* | JavaScript Specific |
+
+
+
+#### Customizing
+
+##### ddd
+
+
+
+
+### Changelog
+
+#### 0.1.0
+
+* Publication
+*/

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Styleguide Lite</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="format-detection" content="telephone=no, email=no, address=no" />
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/lib.css" />
+        <link rel="stylesheet" href="assets/css/app.css" />
+        <script src="assets/css/lib.js"></script>
+        <script src="assets/css/app.js"></script>
+    </head>
+    <body>
+        <div class="l-wrapper">
+            <header role="banner">
+                <h1>Styleguide Lite</h1>
+                <nav role="navigation">
+                    <ul>
+                        <% getOverviewList().forEach(function (item) { %>
+                            <li>
+                                <a href="<%= item.link %>"><%= item.title %></a>
+                                <% if (hasOverviewChildList(item.sectionNumber)) { %>
+                                    <ul>
+                                        <% getOverviewChildList(item.sectionNumber).forEach(function (childItem) { %>
+                                            <li>
+                                                <a href="<%= childItem.link %>#<%= childItem.number %>"><%= childItem.title %></a>
+                                            </li>
+                                        <% }); %>
+                                    </ul>
+                                <% } %>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </nav>
+            </header>
+            <main role="main">
+                <div class="l-container">
+                    <% getSection(currentSectionNumber).forEach(function (item) { %>
+                        <section id="<%= item.number %>">
+                            <%- item.content %>
+                        </section>
+                    <% }); %>
+                </div>
+            </main>
+            <footer role="contentinfo">
+                <p class="copyright">
+                    <small>
+                        <a href="https://www.npmjs.com/package/styleguide-lite" target="_blank">Proudly powered by Styleguide Lite</a>
+                    </small>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
