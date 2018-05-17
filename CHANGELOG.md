@@ -1,3 +1,7 @@
+# 1.0.5 (2018-05-18)
+
+-   Add function: multiple src on api
+
 # 1.0.4 (2018-05-16)
 
 -   Bug fix (shorthand option)
