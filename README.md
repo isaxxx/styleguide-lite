@@ -75,8 +75,6 @@ styleguideLite({
 });
 ```
 
-For more in depth documentation see: https://isaxxx.com/works/styleguide-lite/
-
 ## [Changelog](CHANGELOG.md)
 
 ## [License](LICENSE)
