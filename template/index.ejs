@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Styleguide Lite</title>
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <meta name="format-detection" content="telephone=no, email=no, address=no" />
-        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/lib.css" />
-        <link rel="stylesheet" href="assets/css/app.css" />
-        <script src="assets/css/lib.js"></script>
-        <script src="assets/css/app.js"></script>
-    </head>
-    <body>
-        <div class="l-wrapper">
-            <header role="banner">
-                <h1>Styleguide Lite</h1>
-                <nav role="navigation">
-                    <ul>
-                        <% getOverviews().forEach(function (overview) { %>
-                            <li>
-                                <a href="<%= overview.link %>"><%= overview.title %></a>
-                                <% if (hasDetails(overview.sectionNumber)) { %>
-                                    <ul>
-                                        <% getDetails(overview.sectionNumber).forEach(function (detail) { %>
-                                            <li>
-                                                <a href="<%= detail.link %>#<%= detail.number %>"><%= detail.title %></a>
-                                            </li>
-                                        <% }); %>
-                                    </ul>
-                                <% } %>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </nav>
-            </header>
-            <main role="main">
-                <div class="l-container">
-                    <% getSection(currentSectionNumber).forEach(function (item) { %>
-                        <section id="<%= item.number %>">
-                            <%- item.content %>
-                        </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styleguide Lite</title>
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script src="./js/app.js"></script>
+  </head>
+  <body>
+    <div>
+      <header role="banner">
+        <h1>Styleguide Lite</h1>
+        <nav role="navigation">
+          <ul>
+            <% getSections().forEach((section) => { %>
+              <li>
+                <a href="<%= section.link %>"><%= section.title %></a>
+                <% if (hasSubSections(section.sectionNumber)) { %>
+                  <ul>
+                    <% getSubSections(section.sectionNumber).forEach((subSection) => { %>
+                      <li>
+                        <a href="<%= subSection.link %>#link-<%= subSection.subSectionNumber %>"><%= subSection.title %></a>
+                      </li>
                     <% }); %>
-                </div>
-            </main>
-            <footer role="contentinfo">
-                <p class="copyright">
-                    <small>
-                        <a href="https://www.npmjs.com/package/styleguide-lite" target="_blank">Proudly powered by Styleguide Lite</a>
-                    </small>
-                </p>
-            </footer>
-        </div>
-    </body>
+                  </ul>
+                <% } %>
+              </li>
+            <% }); %>
+          </ul>
+        </nav>
+      </header>
+      <main role="main">
+        <% getContents(currentSectionNumber).forEach((item) => { %>
+          <section id="link-<%= item.subSectionNumber %>">
+            <%- item.content %>
+          </section>
+        <% }); %>
+      </main>
+      <footer role="contentinfo">
+        <p>
+          <small>
+            <a href="https://www.npmjs.com/package/styleguide-lite" target="_blank">Proudly powered by Styleguide Lite</a>
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>

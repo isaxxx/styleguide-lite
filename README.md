@@ -18,60 +18,64 @@ $ npm install styleguide-lite --save
 
 ```
 Options:
-  --src           src files path pattern. [string] [default: "./src/scss/**/*.scss"]
-  --dest          dest directory path. [string] [default: "./dest/styleguide"]
-  --template      template file path. [string] [default: __dirname + "/template/index.ejs"]
-  --assets        assets directory path. [string] [default: "./dest/assets"]
-  --isOutput      Whether to output. [boolean] [default: true]
+  --src           src files path pattern. [string] [default: './src/scss/**/*.scss']
+  --dest          dest directory path. [string] [default: './dest/assets/styleguide/']
+  --template      template file path. [string] [default: __dirname + '/template/index.ejs']
   --version, -v   show this version. [boolean]
   --help, -h      show this help. [boolean]
 ```
 
-
-
 ## Example
 
-##### CLI
+### CLI
 
 ```bash
-$ styleguide-lite --src ./src/css/**/*.css --dest ./styleguide/ --template ./template/
+$ styleguide-lite --src ./src/css/**/*.css --dest ./dest/assets/styleguide/ --template ./template/index.ejs
 ```
 
-##### ./src/css/app.css
+### CSS or SCSS
 
 ```css
 /*
 ===
-0 Overview
+<Section Number>.<Sub Section Number> <Title>
+===
+<Markdown>
+*/
+
+/*
+===
+0.0 Overview
 ===
 Here markup text.
 */
 
 /*
 ===
-1 Basic
+0.1 Detail
 ===
 Here markup text.
 */
 
 /*
 ===
-1.1 Layout
+1.0 Sample
 ===
 Here markup text.
 */
 ```
 
-##### API
+### JavaScript
 
 ```js
 const styleguideLite = require('styleguide-lite');
 
 styleguideLite({
-  src: './src/scss/**/*.scss',
-  isOutput: false
-}, (param, data) => {
-  console.log(data);
+  src: ['./src/scss/**/*.scss'],
+  dest: ['./src/scss/**/*.scss'],
+  src: ['./src/scss/**/*.scss']
+}).then(() => {
+  console.log('complete!!');
 });
 ```
 

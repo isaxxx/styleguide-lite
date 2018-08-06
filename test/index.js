@@ -1,37 +1,13 @@
 const styleguideLite = require('../index');
 const test = require('ava');
+const fs = require('fs-extra');
 
-// test
-
-test('parse test', (t) => {
-	return new Promise((resolve, reject) => {
-		return styleguideLite({
-		  src: './test/css/**/*.css',
-		  isOutput: false
-		}, (param, data) => {
-			if ( data[0].title === 'Overview' ) {
-				return resolve(t.pass());
-			} else {
-				return reject(t.fail());
-			}
-		});
-	});
-});
-
-test('multiple src', (t) => {
-	return new Promise((resolve, reject) => {
-		return styleguideLite({
-		  src: [
-		  './test/css/test1.css',
-		  './test/css/test2.css'
-		  ],
-		  isOutput: false
-		}, (param, data) => {
-			if ( data[0].title === 'Overview' ) {
-				return resolve(t.pass());
-			} else {
-				return reject(t.fail());
-			}
-		});
-	});
+test('parse - case 001', (t) => {
+  return styleguideLite({
+    src: './test/expect/case-001/style.css',
+    dest: './dest/assets/styleguide/',
+    template: './test/expect/case-001/index.ejs'
+  }).then(() => {
+    t.is(fs.readFileSync('./test/fixtures/case-001/index.html', 'UTF-8'), fs.readFileSync('./dest/assets/styleguide/index.html', 'UTF-8'));
+  });
 });
