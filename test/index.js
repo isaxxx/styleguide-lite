@@ -1,6 +1,6 @@
-const styleguideLite = require('../index');
 const test = require('ava');
 const fs = require('fs-extra');
+const styleguideLite = require('../index');
 
 test('parse - case 001', (t) => {
   return styleguideLite({
