@@ -34,12 +34,10 @@ $ styleguide-lite --src ./src/css/**/*.css --dest ./dest/assets/styleguide/ --te
 ### JavaScript
 
 ```js
-const styleguideLite = require('styleguide-lite');
-
 styleguideLite({
   src: ['./src/scss/**/*.scss'],
-  dest: ['./src/scss/**/*.scss'],
-  src: ['./src/scss/**/*.scss']
+  dest: './dest/assets/styleguide/',
+  templete: './template/index.ejs'
 }).then(() => {
   console.log('complete!!');
 });
