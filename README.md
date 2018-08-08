@@ -8,13 +8,15 @@ Simple Styleguide Generator.
 
 ## Installation
 
-### npm
+### NPM
 
 ```bash
 $ npm install styleguide-lite --save
 ```
 
 ## Usage
+
+### CLI
 
 ```
 Options:
@@ -25,12 +27,22 @@ Options:
   --help, -h      show this help. [boolean]
 ```
 
-## Example
-
-### CLI
-
 ```bash
 $ styleguide-lite --src ./src/css/**/*.css --dest ./dest/assets/styleguide/ --template ./template/index.ejs
+```
+
+### JavaScript
+
+```js
+const styleguideLite = require('styleguide-lite');
+
+styleguideLite({
+  src: ['./src/scss/**/*.scss'],
+  dest: ['./src/scss/**/*.scss'],
+  src: ['./src/scss/**/*.scss']
+}).then(() => {
+  console.log('complete!!');
+});
 ```
 
 ### CSS or SCSS
@@ -63,20 +75,6 @@ Here markup text.
 ===
 Here markup text.
 */
-```
-
-### JavaScript
-
-```js
-const styleguideLite = require('styleguide-lite');
-
-styleguideLite({
-  src: ['./src/scss/**/*.scss'],
-  dest: ['./src/scss/**/*.scss'],
-  src: ['./src/scss/**/*.scss']
-}).then(() => {
-  console.log('complete!!');
-});
 ```
 
 ## [Changelog](CHANGELOG.md)
